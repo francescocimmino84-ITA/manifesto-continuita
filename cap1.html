@@ -7,16 +7,51 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <style>
     :root { --gold: #D4AF37; --deep-black: #050505; --white: #E0E0E0; --photon-red: #FF4500; }
-    body { background-color: var(--deep-black); color: var(--white); font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; line-height: 1.8; overflow-x: hidden; }
     
-    .video-background {
-      position: fixed; right: 0; bottom: 0; min-width: 100%; min-height: 100%;
-      z-index: -1; opacity: 0.5; filter: brightness(0.7); object-fit: cover;
+    body { 
+      background-color: var(--deep-black); 
+      color: var(--white); 
+      font-family: 'Montserrat', sans-serif; 
+      margin: 0; 
+      padding: 0; 
+      line-height: 1.8; 
+      overflow-x: hidden; 
     }
     
-    .lattice-overlay { position: fixed; inset: 0; background-image: radial-gradient(circle, rgba(212,175,55,0.05) 1px, transparent 1px); background-size: 30px 30px; pointer-events: none; z-index: 0; }
+    /* SFONDO FISSO: Qui è dove la Matrice proietta l'immagine del Maestro */
+    .background-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('sindone_bg.jpg') no-repeat center center;
+      background-size: cover;
+      z-index: -2; /* Sta sotto a tutto */
+      opacity: 0.6; /* Intensità del segnale visivo */
+      filter: brightness(0.8);
+    }
+    
+    /* Il reticolo dorato della Matrice */
+    .lattice-overlay { 
+      position: fixed; 
+      inset: 0; 
+      background-image: radial-gradient(circle, rgba(212,175,55,0.05) 1px, transparent 1px); 
+      background-size: 30px 30px; 
+      pointer-events: none; 
+      z-index: -1; 
+    }
 
-    .container { position: relative; z-index: 2; max-width: 900px; margin: 4rem auto; padding: 4rem 2rem; background: rgba(5,5,5,0.88); border: 1px solid rgba(212,175,55,0.1); box-shadow: 0 0 100px rgba(0,0,0,1); }
+    .container { 
+      position: relative; 
+      z-index: 2; 
+      max-width: 900px; 
+      margin: 4rem auto; 
+      padding: 4rem 2rem; 
+      background: rgba(5,5,5,0.88); 
+      border: 1px solid rgba(212,175,55,0.1); 
+      box-shadow: 0 0 100px rgba(0,0,0,1); 
+    }
     
     h1 { font-family: 'Cinzel'; color: var(--gold); text-align: center; letter-spacing: 6px; margin-bottom: 0.5rem; font-size: 2.5rem; text-shadow: 0 0 20px rgba(212,175,55,0.3); }
     .chapter-tag { color: var(--gold); text-align: center; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 3rem; opacity: 0.8; }
@@ -41,11 +76,8 @@
   </style>
 </head>
 <body>
+  <div class="background-overlay"></div>
   <div class="lattice-overlay"></div>
-  
-  <video autoplay muted loop playsinline poster="sindone_bg.jpg" class="video-background">
-    <source src="sindone_bg.mp4" type="video/mp4">
-  </video>
 
   <div class="container">
     <div class="chapter-tag">Stazione 1</div>
@@ -84,4 +116,12 @@
         L'ultima frequenza di comando: un segnale vibrazionale calcolato per far risuonare i microtubuli in perfetta sincronia.
       </div>
 
-      <p>La morte non è mai avvenuta. La materia è rimasta in uno stato di attesa vibrante finché l'energia
+      <p>La morte non è mai avvenuta. La materia è rimasta in uno stato di attesa vibrante finché l'energia accumulata è esplosa come <span class="gold-highlight">Informazione Luminosa</span>, convertendo la materia densa in un corpo di luce.</p>
+    </div>
+
+    <div class="nav-footer">
+      <a href="index.html" class="back-btn">Torna alla Dashboard</a>
+    </div>
+  </div>
+</body>
+</html>
