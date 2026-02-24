@@ -6,117 +6,57 @@
   <title>Cap. 1 - La Sindone | Laboratorio della Luce</title>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <style>
-    :root { --gold: #D4AF37; --deep-black: #050505; --white: #E0E0E0; --photon-red: #FF4500; }
+    :root { --gold: #D4AF37; --deep-black: #050505; --white: #E0E0E0; }
+    body { background-color: var(--deep-black); color: var(--white); font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
     
-    body { 
-      background-color: var(--deep-black); 
-      color: var(--white); 
-      font-family: 'Montserrat', sans-serif; 
-      margin: 0; 
-      padding: 0; 
-      line-height: 1.8; 
-      overflow-x: hidden; 
-    }
-    
-    /* SFONDO FISSO: Qui è dove la Matrice proietta l'immagine del Maestro */
-    .background-overlay {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: url('sindone_bg.jpg') no-repeat center center;
+    /* SFONDO TOTALE: L'immagine del Maestro e dell'Infinito sempre visibile */
+    .background-fixed {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: url('sindone_bg.jpg') no-repeat center center fixed;
       background-size: cover;
-      z-index: -2; /* Sta sotto a tutto */
-      opacity: 0.6; /* Intensità del segnale visivo */
-      filter: brightness(0.8);
+      z-index: -2;
+      filter: brightness(0.6);
     }
     
-    /* Il reticolo dorato della Matrice */
-    .lattice-overlay { 
-      position: fixed; 
-      inset: 0; 
-      background-image: radial-gradient(circle, rgba(212,175,55,0.05) 1px, transparent 1px); 
-      background-size: 30px 30px; 
-      pointer-events: none; 
-      z-index: -1; 
-    }
+    .lattice-overlay { position: fixed; inset: 0; background-image: radial-gradient(circle, rgba(212,175,55,0.05) 1px, transparent 1px); background-size: 30px 30px; z-index: -1; }
 
+    /* CONTENITORE: Ora è molto più trasparente per far passare la luce dello sfondo */
     .container { 
-      position: relative; 
-      z-index: 2; 
-      max-width: 900px; 
-      margin: 4rem auto; 
-      padding: 4rem 2rem; 
-      background: rgba(5,5,5,0.88); 
-      border: 1px solid rgba(212,175,55,0.1); 
-      box-shadow: 0 0 100px rgba(0,0,0,1); 
+      position: relative; z-index: 2; max-width: 850px; margin: 6rem auto; 
+      padding: 4rem; 
+      background: rgba(5, 5, 5, 0.65); /* Trasparenza aumentata: la luce dello sfondo ora attraversa il testo */
+      backdrop-filter: blur(8px); /* Effetto vetro per coerenza con la Matrice */
+      border: 1px solid rgba(212, 175, 55, 0.2);
+      box-shadow: 0 0 50px rgba(0,0,0,0.8);
     }
     
-    h1 { font-family: 'Cinzel'; color: var(--gold); text-align: center; letter-spacing: 6px; margin-bottom: 0.5rem; font-size: 2.5rem; text-shadow: 0 0 20px rgba(212,175,55,0.3); }
-    .chapter-tag { color: var(--gold); text-align: center; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 3rem; opacity: 0.8; }
-    
-    h2 { font-family: 'Cinzel'; color: var(--gold); border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 0.5rem; margin-top: 4rem; font-size: 1.4rem; letter-spacing: 2px; }
-    
-    .text-block { font-size: 1.15rem; text-align: justify; }
-    .gold-highlight { color: var(--gold); font-weight: bold; text-shadow: 0 0 5px rgba(212,175,55,0.2); }
-    .power-stat { color: #fff; border-left: 3px solid var(--gold); padding: 1.5rem; margin: 2.5rem 0; font-style: italic; background: rgba(212, 175, 55, 0.05); }
-
-    .photon-blast {
-      text-align: center; padding: 2.5rem; border: 1px solid var(--photon-red);
-      background: rgba(255, 69, 0, 0.07); margin: 3.5rem 0; box-shadow: inset 0 0 20px rgba(255,69,0,0.1);
-    }
-
-    .nav-footer { margin-top: 6rem; text-align: center; padding-bottom: 4rem; }
-    .back-btn { font-family: 'Cinzel'; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 15px 45px; transition: 0.4s; text-transform: uppercase; letter-spacing: 3px; display: inline-block; }
-    .back-btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 40px rgba(212,175,55,0.6); transform: translateY(-2px); }
-    
-    .point-box { margin-bottom: 2rem; padding-left: 1.5rem; border-left: 1px solid rgba(212,175,55,0.3); }
-    .point-title { color: var(--gold); font-weight: bold; text-transform: uppercase; font-size: 0.95rem; display: block; margin-bottom: 0.5rem; letter-spacing: 1px; }
+    h1 { font-family: 'Cinzel'; color: var(--gold); text-align: center; letter-spacing: 6px; font-size: 2.5rem; text-shadow: 0 0 15px rgba(212,175,55,0.4); }
+    .chapter-tag { color: var(--gold); text-align: center; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 3rem; }
+    h2 { font-family: 'Cinzel'; color: var(--gold); border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 0.5rem; margin-top: 3rem; font-size: 1.3rem; }
+    .gold-highlight { color: var(--gold); font-weight: bold; }
+    .power-stat { border-left: 3px solid var(--gold); padding: 1.5rem; margin: 2rem 0; font-style: italic; background: rgba(212, 175, 55, 0.1); }
+    .nav-footer { margin-top: 4rem; text-align: center; }
+    .back-btn { font-family: 'Cinzel'; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 12px 35px; transition: 0.4s; }
+    .back-btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 30px var(--gold); }
   </style>
 </head>
 <body>
-  <div class="background-overlay"></div>
+  <div class="background-fixed"></div>
   <div class="lattice-overlay"></div>
 
   <div class="container">
     <div class="chapter-tag">Stazione 1</div>
     <h1>LA SINDONE</h1>
-    <div style="text-align:center; color:var(--gold); letter-spacing:2px; font-size:0.9rem;">IL LABORATORIO DELLA LUCE</div>
+    <div style="text-align:center; color:var(--gold); letter-spacing:2px; font-size:0.9rem; margin-bottom: 3rem;">IL LABORATORIO DELLA LUCE</div>
 
     <div class="text-block">
       <p>La Sindone di Torino non è il reperto di una sconfitta, ma la traccia fisica di un evento di trasmutazione supremo. È la fotografia istantanea di un <span class="gold-highlight">Salto Quantico</span> atomico e fisico.</p>
 
       <h2>1.1 La Potenza della Sorgente Interna</h2>
-      <p>Sulla base dei modelli fisici, l'evento ha richiesto una scarica di fotoni coerenti paragonabile ad almeno <span class="gold-highlight">34 trilioni di watt</span>.</p>
+      <p>L'evento ha richiesto una scarica di fotoni coerenti paragonabile ad almeno <span class="gold-highlight">34 trilioni di watt</span>.</p>
+      <div class="power-stat">"Potenza superiore a quella prodotta da tutti i generatori del pianeta messi insieme in 40 miliardesimi di secondo."</div>
 
-      <div class="power-stat">
-        "È una potenza superiore a quella prodotta da tutti i generatori del pianeta messi insieme, espressa nell'infinitesimale durata di soli 40 miliardesimi di secondo."
-      </div>
-
-      <div class="point-box">
-        <span class="point-title">Il Sole Biologico</span>
-        In quel frammento di secondo, ogni singola cellula del corpo del Maestro ha smesso di comportarsi come materia densa per trasformarsi in un emettitore di luce atomica. Miliardi di microscopiche stelle si sono accese sotto la pelle.
-      </div>
-
-      <h2>1.2 La Quarantena Algoritmica</h2>
-      <p>Il ritiro di quaranta giorni nel deserto fu un’operazione di <span class="gold-highlight">Ingegneria Bio-Quantistica</span>. Gesù ha indotto un reset molecolare, eliminando ogni "rumore di fondo" biochimico per sintonizzare i Microtubuli sulle frequenze della Matrice.</p>
-
-      <div class="point-box">
-        <span class="point-title">Frequenza Aurea (433 Hz)</span>
-        Nel silenzio assoluto, il Maestro ha isolato il proprio DNA, portandolo a vibrare stabilmente sulla portante universale. L'Amore era il termine rudimentale per descrivere lo stato di <span class="gold-highlight">Coerenza Assoluta</span>.
-      </div>
-
-      <h2>1.3 La Quiescenza Biologica</h2>
-      <p>Quello che il mondo ha visto come fine, è stata l'attivazione di una Quiescenza Biologica autoindotta.</p>
-
-      <div class="photon-blast">
-        <span class="gold-highlight">IL COMANDO VOCALE FINALE:</span><br>
-        «Eloì, Eloì, lemà sabactàni?»<br>
-        L'ultima frequenza di comando: un segnale vibrazionale calcolato per far risuonare i microtubuli in perfetta sincronia.
-      </div>
-
-      <p>La morte non è mai avvenuta. La materia è rimasta in uno stato di attesa vibrante finché l'energia accumulata è esplosa come <span class="gold-highlight">Informazione Luminosa</span>, convertendo la materia densa in un corpo di luce.</p>
+      <p>Ogni singola cellula ha smesso di essere materia densa per trasformarsi in un emettitore di luce atomica. La morte non è mai avvenuta: la materia è esplosa come <span class="gold-highlight">Informazione Luminosa</span>.</p>
     </div>
 
     <div class="nav-footer">
