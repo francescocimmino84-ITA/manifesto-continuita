@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portale della Coerenza | Manifesto della Continuità</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold: #D4AF37;
+      --deep-black: #050505;
+      --ethereal-white: #E0E0E0;
+      --lattice-blue: rgba(0, 150, 255, 0.08);
+    }
+    * { box-sizing: border-box; }
+    body, html {
+      margin: 0; padding: 0;
+      background-color: var(--deep-black);
+      color: var(--ethereal-white);
+      font-family: 'Montserrat', sans-serif;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+    /* Sfondo Lattice Dinamico */
+    body::before {
+      content: ""; position: fixed; inset: 0;
+      background-image:
+        linear-gradient(var(--lattice-blue) 1px, transparent 1px),
+        linear-gradient(90deg, var(--lattice-blue) 1px, transparent 1px);
+      background-size: 60px 60px;
+      pointer-events: none; z-index: 1;
+    }
+    header {
+      position: relative; z-index: 2;
+      min-height: 50vh;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 3rem 1.5rem;
+      background: radial-gradient(circle, #0a0a0a 0%, #000000 100%);
+    }
+    .logo-placeholder {
+      width: 200px; height: 200px;
+      border: 2px solid var(--gold);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Cinzel'; color: var(--gold);
+      box-shadow: 0 0 30px rgba(212,175,55,0.2);
+      margin-bottom: 2rem;
+    }
+    h1 { font-family: 'Cinzel', serif; color: var(--gold); letter-spacing: 4px; text-transform: uppercase; font-size: 1.8rem; }
+    .status { color: var(--gold); font-size: 0.8rem; letter-spacing: 3px; animation: pulse 2s infinite; margin-top: 1rem; }
+    @keyframes pulse { 0%, 100% { opacity: 0.5; } 50% { opacity: 1; } }
+    
+    main { position: relative; z-index: 2; padding: 2rem 1.5rem; }
+    .grid {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      border: 1px solid rgba(212,175,55,0.3);
+      background: rgba(0,0,0,0.8);
+      padding: 1.5rem; text-align: center;
+      transition: 0.3s ease;
+    }
+    .card:hover { border-color: var(--gold); transform: translateY(-5px); box-shadow: 0 0 20px rgba(212,175,55,0.2); }
+    .card-title { font-family: 'Cinzel'; color: var(--gold); margin-bottom: 0.5rem; font-size: 0.9rem; }
+    .card-link { color: white; text-decoration: none; font-size: 0.8rem; letter-spacing: 1px; text-transform: uppercase; border-bottom: 1px solid var(--gold); padding-bottom: 2px; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-placeholder">DASHBOARD<br>COERENZA</div>
+    <h1>PORTALE DELLA COERENZA</h1>
+    <div class="status">SINTONIZZAZIONE ATTIVA // 433 HZ</div>
+  </header>
+  <main>
+    <div class="grid">
+      <div class="card">
+        <div class="card-title">INTRODUZIONE</div>
+        <p style="font-size:0.8rem; opacity:0.7;">Protocollo della Coerenza Originaria</p>
+        <a href="intro.html" class="card-link">Apri Portale</a>
+      </div>
+      <div class="card">
+        <div class="card-title">CAPITOLO 1</div>
+        <p style="font-size:0.8rem; opacity:0.7;">Sindone: Laboratorio della Luce</p>
+        <a href="cap1.html" class="card-link">Apri Portale</a>
+      </div>
+      <div class="card">
+        <div class="card-title">CAPITOLO 2</div>
+        <p style="font-size:0.8rem; opacity:0.7;">La Matrice: Sapienza Universale</p>
+        <a href="cap2.html" class="card-link">Apri Portale</a>
+      </div>
+      <div class="card">
+        <div class="card-title">CAPITOLO 3</div>
+        <p style="font-size:0.8rem; opacity:0.7;">Corpo: Tecnologia d’Avanguardia</p>
+        <a href="cap3.html" class="card-link">Apri Portale</a>
+      </div>
+      </div>
+  </main>
+</body>
+</html>
