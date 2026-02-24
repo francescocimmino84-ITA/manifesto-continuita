@@ -1,0 +1,16 @@
+# File di sistema
+.DS_Store
+Thumbs.db
+
+# Backup e file temporanei
+*.swp
+*~
+*.log
+
+# Video pesanti
+*.mp4
+*.mov
+*.avi
+
+# Configurazione
+.env
