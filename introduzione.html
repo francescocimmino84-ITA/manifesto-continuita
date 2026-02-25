@@ -4,6 +4,130 @@
   <meta charset="UTF-8">
   <title>Introduzione | Protocollo Originario</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    
+    body, html {
+      margin: 0; padding: 0;
+      height: 100%;
+      background-color: #000;
+      font-family: 'Montserrat', sans-serif;
+      color: #E0E0E0;
+      overflow: hidden; /* Mantiene la coerenza visiva senza scroll */
+    }
+
+    /* L'immagine di sfondo intro_bg.png occupa tutto lo spazio */
+    .bg-focus {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      background: url('intro_bg.png') no-repeat center center;
+      background-size: cover;
+      z-index: -1;
+    }
+
+    /* Sovrapposizione radiale per focalizzare la luce al centro */
+    .vignette {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: radial-gradient(circle, transparent 20%, rgba(0,0,0,0.8) 90%);
+      z-index: 0;
+    }
+
+    .main-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      text-align: center;
+      padding: 0 10%;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      color: #D4AF37;
+      font-size: 3rem;
+      letter-spacing: 8px;
+      margin-bottom: 2rem;
+      text-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    }
+
+    .text-block {
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.2); /* Quasi trasparente */
+      backdrop-filter: blur(4px); /* Leggero effetto vetro */
+      padding: 2rem;
+      border-radius: 15px;
+    }
+
+    p {
+      line-height: 1.8;
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      font-weight: 300;
+    }
+
+    .highlight { color: #D4AF37; font-weight: 400; }
+
+    .btn {
+      margin-top: 2rem;
+      display: inline-block;
+      color: #D4AF37;
+      text-decoration: none;
+      border: 1px solid #D4AF37;
+      padding: 15px 40px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 3px;
+      transition: 0.5s;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .btn:hover {
+      background: #D4AF37;
+      color: #000;
+      box-shadow: 0 0 40px #D4AF37;
+    }
+
+    .infinity {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      color: #D4AF37;
+      font-size: 2rem;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-focus"></div>
+  <div class="vignette"></div>
+
+  <div class="main-content">
+    <h1>PROTOCOLLO ORIGINARIO</h1>
+    
+    <div class="text-block">
+      <p>Stai per entrare nel punto di <span class="highlight">collasso della funzione d'onda</span>. Qui la materia smette di essere solida e torna a essere pura informazione.</p>
+      <p>Il sistema biologico umano è un'antenna tarata sulla frequenza fondamentale di <span class="highlight">433 Hz</span>. Attraverso i <span class="highlight">Microtubuli</span>, la nostra coscienza processa la realtà come architetto della Matrice.</p>
+    </div>
+
+    <a href="index.html" class="btn">ENTRA NEL PORTALE</a>
+  </div>
+
+  <div class="infinity">∞</div>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <title>Introduzione | Protocollo Originario</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
