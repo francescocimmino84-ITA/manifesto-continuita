@@ -2,60 +2,133 @@
 <html lang="it">
 <head>
   <meta charset="UTF-8">
-  <title>Introduzione | Portale della Coerenza</title>
+  <title>Introduzione | Protocollo Originario</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
-    body {
-      background: #050505;
-      color: #E0E0E0;
+    
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #050505;
       font-family: 'Montserrat', sans-serif;
+      color: #E0E0E0;
+      overflow-x: hidden;
+    }
+
+    /* Sfondo con l'immagine intro_bg.png */
+    .bg-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url('intro_bg.png') no-repeat center center fixed;
+      background-size: cover;
+      z-index: -2;
+    }
+
+    /* Filtro per scurire lo sfondo e migliorare la leggibilità */
+    .dark-filter {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: -1;
+    }
+
+    .container {
       display: flex;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      margin: 0;
-      text-align: center;
+      padding: 2rem;
     }
+
     .box {
-      border: 1px solid #D4AF37;
-      padding: 3rem 2rem;
-      background: rgba(212, 175, 55, 0.05);
-      max-width: 600px;
-      width: 90%;
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 3rem 2.5rem;
+      background: rgba(5, 5, 5, 0.8);
+      backdrop-filter: blur(10px);
+      max-width: 750px;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 0 50px rgba(0, 0, 0, 1);
     }
+
     h1 {
       font-family: 'Cinzel', serif;
       color: #D4AF37;
       letter-spacing: 5px;
-      margin-top: 0;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
+      font-size: 1.8rem;
+      text-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
     }
-    p {
-      margin: 0;
-      line-height: 1.6;
+
+    .content-text {
+      line-height: 1.9;
+      font-size: 1.05rem;
+      text-align: justify;
+      margin-bottom: 2.5rem;
     }
+
+    .highlight { 
+      color: #D4AF37; 
+      font-weight: 400;
+      text-shadow: 0 0 8px rgba(212, 175, 55, 0.2);
+    }
+
     .btn {
       display: inline-block;
-      margin-top: 2rem;
       color: #D4AF37;
       text-decoration: none;
       border: 1px solid #D4AF37;
-      padding: 10px 30px;
-      transition: 0.3s;
+      padding: 12px 40px;
+      transition: 0.4s;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 2px;
+      background: transparent;
     }
+
     .btn:hover {
       background: #D4AF37;
       color: #000;
+      box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+    }
+
+    /* Simbolo Infinito in basso a destra */
+    .infinity-seal {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      color: #D4AF37;
+      font-size: 1.5rem;
+      opacity: 0.6;
     }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>PROTOCOLLO ORIGINARIO</h1>
-    <p>Stai per entrare nel punto di collasso della funzione d'onda. Qui la materia si fa informazione.</p>
-    <a href="index.html" class="btn">RITORNA AL PORTALE</a>
+
+  <div class="bg-overlay"></div>
+  <div class="dark-filter"></div>
+
+  <div class="container">
+    <div class="box">
+      <h1>PROTOCOLLO ORIGINARIO</h1>
+      
+      <div class="content-text">
+        <p>Stai per entrare nel punto di <span class="highlight">collasso della funzione d'onda</span>. Qui la materia smette di essere solida e torna a essere pura informazione.</p>
+        
+        <p>Il sistema biologico umano è un'antenna tarata sulla frequenza fondamentale di <span class="highlight">433 Hz</span>. Attraverso i <span class="highlight">Microtubuli</span>, la nostra coscienza processa la realtà non come spettatrice, ma come architetto della Matrice stessa.</p>
+        
+        <p>Questo spazio è un laboratorio di sintonizzazione: lascia fuori il rumore di fondo e preparati al <span class="highlight">Salto Quantico</span> verso la coerenza assoluta.</p>
+      </div>
+
+      <a href="index.html" class="btn">RITORNA AL PORTALE</a>
+      
+      <div class="infinity-seal">∞</div>
+    </div>
   </div>
+
 </body>
 </html>
