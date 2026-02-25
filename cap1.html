@@ -7,37 +7,100 @@
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
   <style>
     :root { --gold: #D4AF37; --deep-black: #050505; --white: #E0E0E0; }
-    body { background-color: var(--deep-black); color: var(--white); font-family: 'Montserrat', sans-serif; margin: 0; padding: 0; overflow-x: hidden; }
     
-    /* SFONDO TOTALE: L'immagine del Maestro e dell'Infinito sempre visibile */
+    body, html { 
+      margin: 0; padding: 0; 
+      background-color: var(--deep-black); 
+      color: var(--white); 
+      font-family: 'Montserrat', sans-serif; 
+      overflow-x: hidden; 
+    }
+    
+    /* SFONDO FISSO: Il Maestro e l'Infinito */
     .background-fixed {
       position: fixed; top: 0; left: 0; width: 100%; height: 100%;
       background: url('sindone_bg.jpg') no-repeat center center fixed;
       background-size: cover;
       z-index: -2;
-      filter: brightness(0.6);
+      filter: brightness(0.7); /* Leggermente più luminoso per vedere i dettagli */
     }
     
-    .lattice-overlay { position: fixed; inset: 0; background-image: radial-gradient(circle, rgba(212,175,55,0.05) 1px, transparent 1px); background-size: 30px 30px; z-index: -1; }
+    /* Reticolo della Matrice */
+    .lattice-overlay { 
+      position: fixed; inset: 0; 
+      background-image: radial-gradient(circle, rgba(212,175,55,0.03) 1px, transparent 1px); 
+      background-size: 40px 40px; 
+      z-index: -1; 
+    }
 
-    /* CONTENITORE: Ora è molto più trasparente per far passare la luce dello sfondo */
+    /* CONTENITORE AL 10% DI OPACITÀ: Trasparenza estrema per la Luce */
     .container { 
-      position: relative; z-index: 2; max-width: 850px; margin: 6rem auto; 
-      padding: 4rem; 
-      background: rgba(5, 5, 5, 0.65); /* Trasparenza aumentata: la luce dello sfondo ora attraversa il testo */
-      backdrop-filter: blur(8px); /* Effetto vetro per coerenza con la Matrice */
-      border: 1px solid rgba(212, 175, 55, 0.2);
-      box-shadow: 0 0 50px rgba(0,0,0,0.8);
+      position: relative; 
+      z-index: 2; 
+      max-width: 850px; 
+      margin: 4rem auto; 
+      padding: 4rem 3rem; 
+      background: rgba(5, 5, 5, 0.1); /* OPACITÀ 10% - La visione attraversa il testo */
+      backdrop-filter: blur(4px); /* Leggero effetto satinato per la leggibilità */
+      border: 1px solid rgba(212, 175, 55, 0.15);
+      box-shadow: 0 0 60px rgba(0,0,0,0.5);
     }
     
-    h1 { font-family: 'Cinzel'; color: var(--gold); text-align: center; letter-spacing: 6px; font-size: 2.5rem; text-shadow: 0 0 15px rgba(212,175,55,0.4); }
-    .chapter-tag { color: var(--gold); text-align: center; font-size: 0.8rem; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 3rem; }
-    h2 { font-family: 'Cinzel'; color: var(--gold); border-bottom: 1px solid rgba(212,175,55,0.3); padding-bottom: 0.5rem; margin-top: 3rem; font-size: 1.3rem; }
-    .gold-highlight { color: var(--gold); font-weight: bold; }
-    .power-stat { border-left: 3px solid var(--gold); padding: 1.5rem; margin: 2rem 0; font-style: italic; background: rgba(212, 175, 55, 0.1); }
-    .nav-footer { margin-top: 4rem; text-align: center; }
-    .back-btn { font-family: 'Cinzel'; color: var(--gold); text-decoration: none; border: 1px solid var(--gold); padding: 12px 35px; transition: 0.4s; }
-    .back-btn:hover { background: var(--gold); color: #000; box-shadow: 0 0 30px var(--gold); }
+    h1 { 
+      font-family: 'Cinzel'; color: var(--gold); 
+      text-align: center; letter-spacing: 8px; 
+      font-size: 2.8rem; 
+      text-shadow: 0 0 25px rgba(212,175,55,0.6); 
+      margin-top: 0;
+    }
+
+    .chapter-tag { 
+      color: var(--gold); text-align: center; 
+      font-size: 0.8rem; letter-spacing: 5px; 
+      text-transform: uppercase; margin-bottom: 2rem; 
+      opacity: 0.8;
+    }
+
+    h2 { 
+      font-family: 'Cinzel'; color: var(--gold); 
+      border-bottom: 1px solid rgba(212,175,55,0.2); 
+      padding-bottom: 0.8rem; margin-top: 3.5rem; 
+      font-size: 1.4rem; 
+      letter-spacing: 2px;
+    }
+
+    p { 
+      line-height: 1.9; font-size: 1.15rem; 
+      text-align: justify; margin-bottom: 1.5rem; 
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.9); /* Ombra per leggere sulla luce dello sfondo */
+    }
+
+    .gold-highlight { color: var(--gold); font-weight: 400; }
+
+    .power-stat { 
+      border-left: 2px solid var(--gold); 
+      padding: 1.5rem 2rem; 
+      margin: 2.5rem 0; 
+      font-style: italic; 
+      background: rgba(212, 175, 55, 0.05); 
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    .nav-footer { margin-top: 5rem; text-align: center; }
+
+    .back-btn { 
+      font-family: 'Cinzel'; color: var(--gold); 
+      text-decoration: none; border: 1px solid var(--gold); 
+      padding: 15px 45px; transition: 0.5s; 
+      background: rgba(0,0,0,0.3);
+      letter-spacing: 3px;
+    }
+
+    .back-btn:hover { 
+      background: var(--gold); color: #000; 
+      box-shadow: 0 0 40px var(--gold); 
+    }
   </style>
 </head>
 <body>
@@ -47,20 +110,23 @@
   <div class="container">
     <div class="chapter-tag">Stazione 1</div>
     <h1>LA SINDONE</h1>
-    <div style="text-align:center; color:var(--gold); letter-spacing:2px; font-size:0.9rem; margin-bottom: 3rem;">IL LABORATORIO DELLA LUCE</div>
+    <div style="text-align:center; color:var(--gold); letter-spacing:3px; font-size:0.9rem; margin-bottom: 4rem; opacity:0.9;">IL LABORATORIO DELLA LUCE</div>
 
     <div class="text-block">
       <p>La Sindone di Torino non è il reperto di una sconfitta, ma la traccia fisica di un evento di trasmutazione supremo. È la fotografia istantanea di un <span class="gold-highlight">Salto Quantico</span> atomico e fisico.</p>
 
       <h2>1.1 La Potenza della Sorgente Interna</h2>
       <p>L'evento ha richiesto una scarica di fotoni coerenti paragonabile ad almeno <span class="gold-highlight">34 trilioni di watt</span>.</p>
-      <div class="power-stat">"Potenza superiore a quella prodotta da tutti i generatori del pianeta messi insieme in 40 miliardesimi di secondo."</div>
+      
+      <div class="power-stat">
+        "Potenza superiore a quella prodotta da tutti i generatori del pianeta messi insieme in 40 miliardesimi di secondo."
+      </div>
 
       <p>Ogni singola cellula ha smesso di essere materia densa per trasformarsi in un emettitore di luce atomica. La morte non è mai avvenuta: la materia è esplosa come <span class="gold-highlight">Informazione Luminosa</span>.</p>
     </div>
 
     <div class="nav-footer">
-      <a href="index.html" class="back-btn">Torna alla Dashboard</a>
+      <a href="index.html" class="back-btn">Torna al Portale</a>
     </div>
   </div>
 </body>
