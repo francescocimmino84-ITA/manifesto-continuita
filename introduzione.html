@@ -17,11 +17,12 @@
     }
 
     /* Puntamento pulito: nome file + estensione */
-    .bg-focus {
+   .bg-focus {
       position: fixed;
       top: 0; left: 0;
       width: 100vw; height: 100vh;
-      background: url('intro_bg.png') no-repeat center center;
+      /* Ho aggiunto ./ per dire al browser: "cerca esattamente qui accanto" */
+      background: url('./intro_bg.png') no-repeat center center;
       background-size: cover;
       z-index: -1;
     }
